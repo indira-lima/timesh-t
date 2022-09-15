@@ -36,6 +36,14 @@ To package apps for the local platform:
 yarn run package
 ```
 
-## Docs
+## Timesh-t Changelog
 
-See our [docs and guides here](https://electron-react-boilerplate.js.org/docs/installation)
+See [what's new in each version here](https://github.com/Dahan-Schuster/timesh-t/blob/main/CHANGELOG.md)
+
+## Timesh-t Road Map
+
+See [what's in the to-do list here](https://github.com/Dahan-Schuster/timesh-t/blob/main/ROADMAP.md)
+
+## Electron React Boilerplate Docs
+
+See the [docs and guides here](https://electron-react-boilerplate.js.org/docs/installation)
