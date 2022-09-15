@@ -9,6 +9,8 @@ import '@fontsource/roboto/700.css';
 
 import Home from 'pages/Home';
 
+import { SavedDataProvider } from 'contexts/SavedDataContext';
+
 import '../scss/app.scss';
 
 const customTheme = createTheme({
@@ -23,11 +25,13 @@ const customTheme = createTheme({
 export default function App() {
   return (
     <ThemeProvider theme={customTheme}>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Home />} />
-        </Routes>
-      </Router>
+      <SavedDataProvider>
+        <Router>
+          <Routes>
+            <Route path="/" element={<Home />} />
+          </Routes>
+        </Router>
+      </SavedDataProvider>
     </ThemeProvider>
   );
 }

@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useCallback } from 'react';
 import Grid from '@mui/material/Unstable_Grid2';
 import Container from '@mui/material/Container';
 import InputAdornment from '@mui/material/InputAdornment';
@@ -9,6 +9,8 @@ import * as Yup from 'yup';
 
 import TextFieldInput from 'components/Inputs/TextField';
 import SelectInput from 'components/Inputs/Select';
+
+import useSavedData from 'hooks/useSavedData';
 
 import './styles.scss';
 
@@ -26,11 +28,10 @@ export interface NewTaskValues {
 }
 
 const NewTaskForm = () => {
-  const [clients, setClients] = useState([{ value: 1, label: 'Nagumo' }]);
-  const [projects, setProjects] = useState([{ value: 1, label: 'NAAP' }]);
-  const [tags, setTags] = useState([{ value: 1, label: 'Codificação' }]);
+  const { clients, projects, tags } = useSavedData();
 
   const handleOnSubmit = useCallback((values: NewTaskValues) => {
+    // eslint-disable-next-line no-alert
     alert(JSON.stringify(values));
   }, []);
 
@@ -63,7 +64,7 @@ const NewTaskForm = () => {
                     id="client"
                     name="client"
                     label="Cliente"
-                    values={clients}
+                    values={clients.map((c) => ({ value: c, label: c }))}
                   />
                 </Grid>
                 <Grid xs={12} sm={4}>
@@ -71,11 +72,16 @@ const NewTaskForm = () => {
                     id="project"
                     name="project"
                     label="Projeto"
-                    values={projects}
+                    values={projects.map((p) => ({ value: p, label: p }))}
                   />
                 </Grid>
                 <Grid xs={12} sm={4}>
-                  <SelectInput id="tag" name="tag" label="Tag" values={tags} />
+                  <SelectInput
+                    id="tag"
+                    name="tag"
+                    label="Tag"
+                    values={tags.map((t) => ({ value: t, label: t }))}
+                  />
                 </Grid>
                 <Grid xs={12} sm={4}>
                   <TextFieldInput

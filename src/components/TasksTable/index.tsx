@@ -4,9 +4,7 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
 import Container from '@mui/material/Container';
-import { useTheme } from '@mui/material/styles';
 import { DateTime } from 'luxon';
 
 import './styles.scss';
@@ -26,8 +24,6 @@ interface TasksTableProps {
 }
 
 const TasksTable = ({ rows }: TasksTableProps) => {
-  // const theme = useTheme();
-
   return (
     <Container id="tasks-table">
       <TableContainer component={DefaultTable}>
