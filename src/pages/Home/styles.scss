@@ -1,0 +1,16 @@
+/*
+ * @NOTE: Prepend a `~` to css file paths that are in your node_modules
+ *        See https://github.com/webpack-contrib/sass-loader#imports
+ */
+.main-container {
+  position: relative;
+  color: white;
+  height: 100vh;
+  // overflow-y: hidden;
+  background: linear-gradient(
+    200.96deg,
+    #f7fe2a -29.09%,
+    #dd5789 51.77%,
+    #7a2c9e 129.35%
+  );
+}

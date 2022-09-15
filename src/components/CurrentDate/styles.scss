@@ -1,0 +1,13 @@
+#clock-container {
+  text-align: center;
+  color: #fff;
+  // font-weight: bold;
+
+  & #current-date {
+    font-size: 125%;
+  }
+
+  & #current-hour {
+    font-size: 110%;
+  }
+}
