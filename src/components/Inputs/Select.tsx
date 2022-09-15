@@ -35,7 +35,9 @@ const SelectInput = (props: SelectInputProps) => {
           color="info"
         >
           {values.map((v) => (
-            <MenuItem value={v.value}>{v.label}</MenuItem>
+            <MenuItem key={v.value} value={v.value}>
+              {v.label}
+            </MenuItem>
           ))}
         </Select>
         {meta.touched && meta.error && (
