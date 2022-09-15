@@ -24,7 +24,6 @@ const TextFieldInput = (props: TextFieldInputProps) => {
         {...props}
         fullWidth
         size="small"
-        defaultValue={meta.initialValue}
         error={!!(meta.touched && meta.error)}
         helperText={meta.error}
         variant="standard"
