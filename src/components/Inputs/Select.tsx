@@ -22,14 +22,17 @@ const SelectInput = (props: SelectInputProps) => {
   return (
     <div className="form-control-container">
       <FormControl fullWidth>
-        <InputLabel id={`select-${name}-label`}>{label}</InputLabel>
+        <InputLabel id={`select-${name}-label`} color="info">
+          {label}
+        </InputLabel>
         <Select
-          variant="standard"
+          variant="filled"
           size="small"
           labelId={`select-${name}-label`}
           error={!!(meta.touched && meta.error)}
           {...field}
           {...props}
+          color="info"
         >
           {values.map((v) => (
             <MenuItem value={v.value}>{v.label}</MenuItem>

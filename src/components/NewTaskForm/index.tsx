@@ -90,7 +90,7 @@ const NewTaskForm = () => {
                             onClick={submitForm}
                             title="Adicionar"
                             edge="end"
-                            color="primary"
+                            color="info"
                           >
                             <SendSharp />
                           </IconButton>

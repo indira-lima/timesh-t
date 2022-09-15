@@ -9,7 +9,7 @@ import '@fontsource/roboto/700.css';
 
 import Home from 'pages/Home';
 
-import './App.scss';
+import '../scss/app.scss';
 
 const customTheme = createTheme({
   palette: {

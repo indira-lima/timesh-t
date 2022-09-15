@@ -26,7 +26,8 @@ const TextFieldInput = (props: TextFieldInputProps) => {
         size="small"
         error={!!(meta.touched && meta.error)}
         helperText={meta.error}
-        variant="standard"
+        variant="filled"
+        color="info"
         className="custom-form-control"
       />
     </div>

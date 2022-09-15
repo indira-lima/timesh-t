@@ -1,0 +1,59 @@
+@import '../../scss/app';
+$tableBorderRadius: 15px;
+
+.default-table {
+  border-radius: $tableBorderRadius !important;
+  background-color: transparent !important;
+
+  & table {
+    border-top-left-radius: $tableBorderRadius;
+    border-top-right-radius: $tableBorderRadius;
+    background-color: transparent;
+  }
+
+  & thead {
+    background-color: $primary;
+
+    &, & tr:first-of-type {
+      border-top-left-radius: $tableBorderRadius;
+      border-top-right-radius: $tableBorderRadius;
+    }
+
+    & th {
+      color: white;
+      text-align: center;
+
+      &:first-child {
+        border-top-left-radius: $tableBorderRadius;
+      }
+
+      &:last-child {
+        border-top-right-radius: $tableBorderRadius;
+      }
+    }
+  }
+
+  & tbody {
+    background-color: transparent;
+
+    & tr, & td {
+      background-color: #d4d4d480;
+      text-align: center;
+    }
+
+    &, & tr:last-of-type {
+      border-bottom-left-radius: $tableBorderRadius;
+      border-bottom-right-radius: $tableBorderRadius;
+    }
+
+    & tr:last-of-type td {
+      &:first-child {
+        border-bottom-left-radius: $tableBorderRadius;
+      }
+
+      &:last-child {
+        border-bottom-right-radius: $tableBorderRadius;
+      }
+    }
+  }
+}

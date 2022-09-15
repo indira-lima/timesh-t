@@ -10,6 +10,7 @@ import { useTheme } from '@mui/material/styles';
 import { DateTime } from 'luxon';
 
 import './styles.scss';
+import DefaultTable from 'components/DefaultTable';
 
 export interface TaskRow {
   client: string;
@@ -28,18 +29,18 @@ const TasksTable = ({ rows }: TasksTableProps) => {
   // const theme = useTheme();
 
   return (
-    <Container>
-      <TableContainer component={Paper}>
+    <Container id="tasks-table">
+      <TableContainer component={DefaultTable}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
-          <TableHead>
+          <TableHead className="table-head">
             <TableRow>
-              <TableCell align="center">Cliente</TableCell>
-              <TableCell align="center">Projeto</TableCell>
-              <TableCell align="center">Tag</TableCell>
-              <TableCell align="center">Descrição</TableCell>
-              <TableCell align="center">Início</TableCell>
-              <TableCell align="center">Fim</TableCell>
-              <TableCell align="center">Total</TableCell>
+              <TableCell>Cliente</TableCell>
+              <TableCell>Projeto</TableCell>
+              <TableCell>Tag</TableCell>
+              <TableCell>Descrição</TableCell>
+              <TableCell>Início</TableCell>
+              <TableCell>Fim</TableCell>
+              <TableCell>Total</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -49,19 +50,17 @@ const TasksTable = ({ rows }: TasksTableProps) => {
                 key={i}
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
               >
-                <TableCell component="th" scope="row">
-                  {row.client}
-                </TableCell>
-                <TableCell align="right">{row.project}</TableCell>
-                <TableCell align="right">{row.tag}</TableCell>
-                <TableCell align="right">{row.description}</TableCell>
-                <TableCell align="right">
+                <TableCell>{row.client}</TableCell>
+                <TableCell>{row.project}</TableCell>
+                <TableCell>{row.tag}</TableCell>
+                <TableCell>{row.description}</TableCell>
+                <TableCell>
                   {row.beginning.toLocaleString(DateTime.TIME_24_WITH_SECONDS)}
                 </TableCell>
-                <TableCell align="right">
+                <TableCell>
                   {row.end.toLocaleString(DateTime.TIME_24_WITH_SECONDS)}
                 </TableCell>
-                <TableCell align="right">
+                <TableCell>
                   {row.end
                     .diff(row.beginning)
                     .toISOTime({ suppressMilliseconds: true })}

@@ -8,6 +8,7 @@ import CurrentDate from 'components/CurrentDate';
 
 import config from 'config';
 import './styles.scss';
+import { Paper } from '@mui/material';
 
 const tasksMock = [
   {
@@ -39,15 +40,17 @@ const Home = () => {
       flexWrap="nowrap"
       className="main-container"
     >
-      <Grid xs={12}>
-        <CurrentDate />
-      </Grid>
-      <Grid xs={12}>
-        <NewTaskForm />
-      </Grid>
-      <Grid xs={12}>
-        <TasksTable rows={tasks} />
-      </Grid>
+      <Paper className="main-section">
+        <Grid xs={12}>
+          <CurrentDate />
+        </Grid>
+        <Grid xs={12}>
+          <NewTaskForm />
+        </Grid>
+        <Grid xs={12}>
+          <TasksTable rows={tasks} />
+        </Grid>
+      </Paper>
     </Grid>
   );
 };
