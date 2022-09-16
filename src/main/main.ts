@@ -13,7 +13,10 @@ import { app, BrowserWindow, shell } from 'electron';
 import MenuBuilder from './menu';
 import { resolveHtmlPath } from './util';
 
-import './eventListeners';
+import './ipcEvents';
+
+// tries to import the .env.js file, just to throw an error if it doesn't exist
+import '../../.env';
 
 // class AppUpdater {
 //   constructor() {

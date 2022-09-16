@@ -20,7 +20,16 @@ export const SavedDataProvider: React.FC<SavedDataProviderProps> = ({
   const [tags, setTags] = useState(['Codificação']);
 
   useEffect(() => {
-    
+    // calling IPC exposed from preload script
+    window.electron.ipcRenderer.on('get-saved-data', (rawData) => {
+      const data = JSON.parse(String(rawData));
+
+      setClients(data.clients || []);
+      setProjects(data.projects || []);
+      setTags(data.tags || []);
+    });
+
+    window.electron.ipcRenderer.sendMessage('get-saved-data', []);
   }, []);
 
   return (

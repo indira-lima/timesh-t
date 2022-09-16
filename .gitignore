@@ -2,6 +2,10 @@
 logs
 *.log
 
+# Saved data
+.local
+.env.js
+
 # Runtime data
 pids
 *.pid
